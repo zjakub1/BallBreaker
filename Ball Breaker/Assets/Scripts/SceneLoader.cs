@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
-{
+{ 
     public void LoadNextScene()
     {
         // use scenemanager class to get the current active scene, via the GetActiveScene method
@@ -17,6 +17,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadStartScene()
     {
+        FindObjectOfType<GameSession>().ResetGame();
         SceneManager.LoadScene(0);
     }
 
