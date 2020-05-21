@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1669385633}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Player Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,13 +135,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddle1: {fileID: 0}
-  xVelocity: 1
+  xVelocity: 3
   yVelocity: 15
   ballSounds:
   - {fileID: 8300000, guid: 0307984a8699da34d9bbb841c9f55f53, type: 3}
   - {fileID: 8300000, guid: a84c206a9f6dc184da2c7355f1e6e206, type: 3}
   - {fileID: 8300000, guid: 7f18dd802b4097446b4a93598fd0b61f, type: 3}
   - {fileID: 8300000, guid: a392d02e4402ed34c8a03b3402daf9e7, type: 3}
+  randomBounce: 0.2
 --- !u!82 &1669385633
 AudioSource:
   m_ObjectHideFlags: 0

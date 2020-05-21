@@ -17,13 +17,15 @@ public class Ball : MonoBehaviour
 
     // state - created Vector2 to be able to store paddle transform details
     Vector2 paddleToBallVector;
-    bool hasStarted = false;
+
+    // bool hasStarted = false;
 
     // cached component references
     // more efficient to get the component once rather than for each collision
     AudioSource myAudioSource;
     // creating a cached reference to rigidBody2D
     Rigidbody2D myRigidBody2D;
+    GameSession session;
 
 
     // Start is called before the first frame update
@@ -35,12 +37,13 @@ public class Ball : MonoBehaviour
         myAudioSource = GetComponent<AudioSource>();
         // getting the rigidBody reference
         myRigidBody2D = GetComponent<Rigidbody2D>();
+        session = FindObjectOfType<GameSession>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!hasStarted)
+        if (!session.getHasStarted())
         { 
             LockBall(); 
             LaunchOnMouseClick();
@@ -60,7 +63,7 @@ public class Ball : MonoBehaviour
     {        
         if (Input.GetMouseButton(0))
         {
-            hasStarted = true;
+            session.setHasStarted();
             // get the objects rigidbody velocity component and set x and y velociity
             myRigidBody2D.velocity = new Vector2(xVelocity, yVelocity);
         }
@@ -71,7 +74,7 @@ public class Ball : MonoBehaviour
         // tweaking the velocity so that we don;t get boring bits
         Vector2 velocityTweak = new Vector2(Random.Range(0f, randomBounce), Random.Range(0f, randomBounce));
 
-        if (hasStarted)
+        if (session.getHasStarted())
         {
             // set the clip to be a random value within the ballSounds array
             AudioClip clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length)];

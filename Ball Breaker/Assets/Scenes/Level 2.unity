@@ -731,7 +731,7 @@ PrefabInstance:
     - target: {fileID: 1824753932819373711, guid: e4049ba2eb69f7f47bfeff6485c26ee9,
         type: 3}
       propertyPath: numberOfBlocks
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7179725346962172077, guid: e4049ba2eb69f7f47bfeff6485c26ee9,
         type: 3}
